@@ -49,9 +49,9 @@ def turn
       turn
     end
   end
-  def turn_count(board)
+  def turn_count
     count = 0
-    board.each do |space|
+    @board.each do |space|
       if space != " "
         count += 1
       end
@@ -59,7 +59,7 @@ def turn
     count
   end
 
-  def current_player(board)
-    turn_count(board)%2 == 0 ? "X" : "O"
+  def current_player
+    turn_count(@board)%2 == 0 ? "X" : "O"
   end
 end
