@@ -83,13 +83,13 @@ def turn
     won? == false && full? ? true : false
   end
 
-  def over?(board)
-    won?(board) || full?(board) || draw?(board)
+  def over?
+    won? || full? || draw?
   end
 
-  def winner(board)
-    if won?(board) != false
-      board[won?(board)[0]]
+  def winner
+    if won? != false
+      board[won?[0]]
     end
   end
 end
