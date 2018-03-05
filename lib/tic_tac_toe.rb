@@ -92,4 +92,14 @@ def turn
       @board[won?[0]]
     end
   end
+  def play
+    until over?
+      turn
+    end
+    if winner
+      puts "Congratulations #{winner)}!"
+    else
+      puts "Cat's Game!"
+    end
+  end
 end
