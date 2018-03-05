@@ -46,7 +46,7 @@ def turn
     move(index, current_player(@board))
     display_board
   else
-    turn(board)
+    turn
   end
 end
 end
