@@ -62,4 +62,34 @@ def turn
   def current_player
     turn_count%2 == 0 ? "X" : "O"
   end
+
+  def won?
+    won = false
+    WIN_COMBINATIONS.detect do |combo|
+      if @board[combo[0]] == " "
+        won = false
+      elsif @board[combo[0]] == @board[combo[1]] && @board[combo[0]] == @board[combo[2]]
+        won = combo
+      end
+    end
+    won
+  end
+
+  def full?(board)
+    board.none?{|space| space == " "}
+  end
+
+  def draw?(board)
+    won?(board) == false && full?(board) ? true : false
+  end
+
+  def over?(board)
+    won?(board) || full?(board) || draw?(board)
+  end
+
+  def winner(board)
+    if won?(board) != false
+      board[won?(board)[0]]
+    end
+  end
 end
