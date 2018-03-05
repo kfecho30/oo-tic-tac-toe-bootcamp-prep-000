@@ -13,6 +13,7 @@ class TicTacToe
       [0,4,8], #diagonal win
       [2,4,6] #diagonal win
     ]
+    
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
@@ -23,6 +24,14 @@ class TicTacToe
 
   def input_to_index(user_input)
     user_input.to_i - 1
+  end
+  
+  def move(index, token)
+    @board[index] = token
+  end
+
+  def position_taken?( location)
+    @board[location] != " " && @board[location] != ""
   end
 
 end
