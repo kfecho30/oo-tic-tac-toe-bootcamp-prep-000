@@ -75,12 +75,12 @@ def turn
     won
   end
 
-  def full?(board)
-    board.none?{|space| space == " "}
+  def full?
+    @board.none?{|space| space == " "}
   end
 
-  def draw?(board)
-    won?(board) == false && full?(board) ? true : false
+  def draw?
+    won? == false && full? ? true : false
   end
 
   def over?(board)
