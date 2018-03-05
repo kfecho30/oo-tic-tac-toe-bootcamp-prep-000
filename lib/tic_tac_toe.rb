@@ -89,7 +89,7 @@ def turn
 
   def winner
     if won? != false
-      board[won?[0]]
+      @board[won?[0]]
     end
   end
 end
